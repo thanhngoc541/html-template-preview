@@ -228,73 +228,18 @@
     </style>
 </head>
 <body>
-    <script>
-        // Load templates dynamically
-        async function loadTemplates() {
-            const grid = document.getElementById('templateGrid');
-            
-            try {
-                const response = await fetch('/api/templates');
-                const templates = await response.json();
-                
-                if (templates.length === 0) {
-                    grid.innerHTML = `
-                        <div class="empty-message">
-                            <h3>No templates found</h3>
-                            <p>Add HTML files to the <code>templates/</code> folder to get started!</p>
-                        </div>
-                    `;
-                    return;
-                }
-                
-                grid.innerHTML = templates.map(template => `
-                    <div class="template-card" onclick="window.open('${template.path}', '_blank')">
-                        <div class="template-preview">
-                            <iframe src="${template.path}"></iframe>
-                        </div>
-                        <div class="template-info">
-                            <h3>${template.icon} ${template.title}</h3>
-                            <p>${template.description}</p>
-                            <div class="template-tags">
-                                ${template.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                            </div>
-                            <div class="template-actions">
-                                <a href="${template.path}" target="_blank" class="btn btn-primary">Preview</a>
-                                <button onclick="event.stopPropagation(); copyPath('${template.path}')" class="btn btn-secondary">Copy Path</button>
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
-                
-            } catch (error) {
-                console.error('Error loading templates:', error);
-                grid.innerHTML = `
-                    <div class="empty-message">
-                        <h3>Error loading templates</h3>
-                        <p>Please make sure the server is running correctly.</p>
-                    </div>
-                `;
-            }
-        }
-
-        function copyPath(path) {
-            navigator.clipboard.writeText(path).then(() => {
-                alert('Path copied to clipboard!');
-            });
-        }
-
-        // Load templates when page loads
-        document.addEventListener('DOMContentLoaded', loadTemplates);
-    </script>
     <div class="container">
         <header>
             <h1>🎨 HTML Template Gallery</h1>
             <p class="subtitle">Professional templates for emails, invoices, and reports</p>
         </header>
 
-        <div class="template-grid">
-            <!-- Email Template -->
-            <div class="template-card" onclick="window.open('templates/email-template.html', '_blank')">
+        <div class="template-grid" id="templateGrid">
+            <!-- Templates will be loaded dynamically -->
+            <div class="loading-message">
+                <p>Loading templates...</p>
+            </div>
+        </div>
                 <div class="template-preview">
                     <iframe src="templates/email-template.html"></iframe>
                 </div>
@@ -346,11 +291,6 @@
                         <span class="tag">Analytics</span>
                         <span class="tag">Professional</span>
                     </div>
-                    <div class="template-actions">
-                        <a href="templates/report-template.html" target="_blank" class="btn btn-primary">Preview</a>
-                        <button onclick="event.stopPropagation(); navigator.clipboard.writeText('templates/report-template.html')" class="btn btn-secondary">Copy Path</button>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -372,11 +312,72 @@
                     <p>Run <code>npm run build</code> to inline CSS for email clients. Output goes to <code>dist/</code> folder.</p>
                 </div>
                 <div class="feature">
-                    <h3>�️ Print Ready</h3>
+                    <h3>🖨️ Print Ready</h3>
                     <p>All templates are optimized for printing. Use Ctrl/Cmd+P to generate print-ready versions.</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Load templates dynamically
+        async function loadTemplates() {
+            const grid = document.getElementById('templateGrid');
+            
+            try {
+                const response = await fetch('/api/templates');
+                const templates = await response.json();
+                
+                console.log('Loaded templates:', templates.length);
+                
+                if (templates.length === 0) {
+                    grid.innerHTML = `
+                        <div class="empty-message">
+                            <h3>No templates found</h3>
+                            <p>Add HTML files to the <code>templates/</code> folder to get started!</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                grid.innerHTML = templates.map(template => `
+                    <div class="template-card" onclick="window.open('${template.path}', '_blank')">
+                        <div class="template-preview">
+                            <iframe src="${template.path}"></iframe>
+                        </div>
+                        <div class="template-info">
+                            <h3>${template.icon} ${template.title}</h3>
+                            <p>${template.description}</p>
+                            <div class="template-tags">
+                                ${template.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            </div>
+                            <div class="template-actions">
+                                <a href="${template.path}" target="_blank" class="btn btn-primary">Preview</a>
+                                <button onclick="event.stopPropagation(); copyPath('${template.path}')" class="btn btn-secondary">Copy Path</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                console.error('Error loading templates:', error);
+                grid.innerHTML = `
+                    <div class="empty-message">
+                        <h3>Error loading templates</h3>
+                        <p>Please make sure the server is running correctly.</p>
+                    </div>
+                `;
+            }
+        }
+
+        function copyPath(path) {
+            navigator.clipboard.writeText(path).then(() => {
+                alert('Path copied to clipboard!');
+            });
+        }
+
+        // Load templates when page loads
+        document.addEventListener('DOMContentLoaded', loadTemplates);
+    </script>
 </body>
 </html>

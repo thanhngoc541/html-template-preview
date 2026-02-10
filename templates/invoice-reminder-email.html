@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Professional invoice reminder email template with payment options and contact information.">
+    <meta name="keywords" content="Email, Invoice, Payment Reminder, Business">
+    <meta name="icon" content="💳">
+    <title>Invoice Payment Reminder</title>
+    <style>
+        html {
+            width: 100%;
+        }
+        
+        /* Reset styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f5f5f5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            width: 100%;
+            min-width: 320px;
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        img {
+            border: 0;
+            display: block;
+            outline: none;
+            text-decoration: none;
+        }
+        
+        /* Container */
+        .email-container {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+        
+        /* Header with gradient */
+        .header {
+            background: linear-gradient(135deg, #0066ff 0%, #00bba7 100%);
+            padding: 60px 40px;
+            text-align: left;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            background: linear-gradient(135deg, #0066ff 0%, #00bba7 100%);
+            color: white;
+            font-size: 20px;
+        }
+        
+        /* Content */
+        .content {
+            padding: 50px 60px;
+            color: #333333;
+        }
+        
+        .subject-label {
+            font-size: 11px;
+            background: linear-gradient(135deg, #0066ff 0%, #00bba7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .subject-text {
+            font-size: 24px;
+            color: #1a1a1a;
+            font-weight: 600;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+        
+        .greeting {
+            font-size: 16px;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+        
+        .message-text {
+            font-size: 16px;
+            color: #4a4a4a;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        
+        /* Invoice Details Box */
+        .invoice-box {
+            background: linear-gradient(135deg, #f0f7ff 0%, #f0fcfc 100%);
+            border: 2px solid #d0e7ff;
+            border-radius: 16px;
+            padding: 35px 40px;
+            margin: 40px 0;
+        }
+        
+        .invoice-box-title {
+            font-size: 20px;
+            color: #0066ff;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .invoice-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+        
+        .invoice-label {
+            font-size: 14px;
+            color: #0066ff;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+        
+        .invoice-value {
+            font-size: 18px;
+            color: #0066ff;
+            font-weight: 700;
+        }
+        
+        .amount-value {
+            font-size: 28px;
+        }
+        
+        /* Payment Options */
+        .section-title {
+            font-size: 20px;
+            color: #1a1a1a;
+            font-weight: 600;
+            margin: 50px 0 30px 0;
+        }
+        
+        .payment-option {
+            border: 2px solid #e8e8e8;
+            border-radius: 16px;
+            padding: 30px 35px;
+            margin-bottom: 20px;
+            background: #ffffff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        
+        .payment-option:hover {
+            border-color: #00bba7;
+            box-shadow: 0 4px 16px rgba(93, 185, 180, 0.15);
+        }
+        
+        .option-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        
+        .option-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0066ff 0%, #00bba7 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            margin-right: 14px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);
+        }
+        
+        .option-number.secondary {
+            background: linear-gradient(135deg, #00bba7 0%, #0066ff 100%);
+        }
+        
+        .option-title {
+            font-size: 20px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .option-description {
+            font-size: 16px;
+            color: #4a4a4a;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        /* Button */
+        .button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #0066ff 0%, #00bba7 100%);
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 102, 255, 0.3);
+        }
+        
+        /* Support Box */
+        .support-box {
+            background: #f9f9f9;
+            border: 2px solid #efefef;
+            border-radius: 16px;
+            padding: 30px 35px;
+            margin: 40px 0;
+        }
+        
+        .support-text {
+            font-size: 16px;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+        
+        .contact-info {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        
+        .contact-label {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .contact-link {
+            color: #0066ff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Closing */
+        .closing {
+            margin: 40px 0;
+        }
+        
+        .closing-text {
+            font-size: 16px;
+            color: #4a4a4a;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        
+        .signature {
+            font-size: 16px;
+            color: #1a1a1a;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+        
+        .signature-name {
+            color: #0066ff;
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #0066ff 0%, #00bba7 100%);
+            padding: 50px 60px;
+            color: white;
+        }
+        
+        .footer-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 35px;
+        }
+        
+        .footer-section {
+            margin-bottom: 28px;
+        }
+        
+        .footer-section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .footer-section-text {
+            font-size: 15px;
+            opacity: 0.9;
+            margin: 8px 0;
+            font-weight: 400;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        
+        .footer-disclaimer {
+            font-size: 12px;
+            opacity: 0.8;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 600px) {
+            .content {
+                padding: 30px 20px !important;
+            }
+            
+            .header {
+                padding: 40px 20px !important;
+            }
+            
+            .footer {
+                padding: 30px 20px !important;
+            }
+            
+            .invoice-box {
+                padding: 20px !important;
+            }
+            
+            .payment-option {
+                padding: 20px !important;
+            }
+            
+            .support-box {
+                padding: 20px !important;
+            }
+            
+            .subject-text {
+                font-size: 18px !important;
+            }
+            
+            .option-number {
+                width: 32px !important;
+                height: 32px !important;
+                font-size: 15px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f5f5f5;">
+        <tr>
+            <td align="center" style="padding: 40px 20px;">
+                <table role="presentation" class="email-container" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%; background: white;">
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            <div class="logo">©</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Content -->
+                    <tr>
+                        <td class="content">
+                            <!-- Subject -->
+                            <div class="subject-label">SUBJECT</div>
+                            <div class="subject-text">Your Monthly Invoice – January/2026 (Invoice INV-2026-001)</div>
+                            
+                            <!-- Greeting -->
+                            <p class="greeting">Dear Valued Customer,</p>
+                            
+                            <!-- Message -->
+                            <p class="message-text">We hope this message finds you well. This is a friendly reminder that payment for your monthly invoice is now due.</p>
+                            
+                            <!-- Invoice Details Box -->
+                            <div class="invoice-box">
+                                <div class="invoice-box-title">Invoice Details</div>
+                                
+                                <div class="invoice-row">
+                                    <div>
+                                        <div class="invoice-label">Invoice Number</div>
+                                        <div class="invoice-value">INV-2026-001</div>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div class="invoice-label">Amount Due</div>
+                                        <div class="invoice-value amount-value">$5,000.00</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="invoice-row" style="margin-bottom: 0;">
+                                    <div>
+                                        <div class="invoice-label">Scheduled Payment Date</div>
+                                        <div class="invoice-value">January 15, 2026</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Payment Options -->
+                            <div class="section-title">You have two ways to top up your account:</div>
+                            
+                            <!-- Option 1 -->
+                            <div class="payment-option">
+                                <div class="option-header">
+                                    <div class="option-number">1</div>
+                                    <div class="option-title">Pay Manually:</div>
+                                </div>
+                                <p class="option-description">Click the button below to review your invoice and make a secure payment.</p>
+                                <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        <td>
+                                            <a href="#" class="button">Pay Invoice</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            
+                            <!-- Option 2 -->
+                            <div class="payment-option">
+                                <div class="option-header">
+                                    <div class="option-number secondary">2</div>
+                                    <div class="option-title">Automatic Payment (PAD):</div>
+                                </div>
+                                <p class="option-description">If you've set up a pre-authorized debit, the amount above will be automatically withdrawn from your account on the scheduled date.</p>
+                            </div>
+                            
+                            <!-- Support Box -->
+                            <div class="support-box">
+                                <p class="support-text">If you have any questions about the invoice, top-up process, or PAD, our team is here to assist:</p>
+                                
+                                <div class="contact-info">
+                                    <span class="contact-label">Billing & Payment Support:</span>
+                                    <a href="mailto:billing@wellbytes.ca" class="contact-link">billing@wellbytes.ca</a> | 
+                                    <a href="tel:+18882184549" class="contact-link">+1 (888)-218-4549</a>
+                                </div>
+                                
+                                <div class="contact-info">
+                                    <span class="contact-label">Customer Success:</span>
+                                    <a href="mailto:success@wellbytes.ca" class="contact-link">success@wellbytes.ca</a>
+                                </div>
+                            </div>
+                            
+                            <!-- Closing -->
+                            <div class="closing">
+                                <p class="closing-text">Thank you for your prompt attention and for trusting Wellbytes to support your team's benefits.</p>
+                                
+                                <p class="signature">
+                                    Best regards,<br>
+                                    <span class="signature-name">Wellbytes Operations Team</span>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-title">Need Assistance?</div>
+                            
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td width="50%" style="vertical-align: top; padding-right: 20px;">
+                                        <div class="footer-section">
+                                            <div class="footer-section-title">Billing & Payment Support</div>
+                                            <div class="footer-section-text">For invoice and payment questions</div>
+                                            <div class="footer-section-text">
+                                                ✉ <a href="mailto:billing@wellbytes.ca" class="footer-link">billing@wellbytes.ca</a>
+                                            </div>
+                                            <div class="footer-section-text">
+                                                ☎ <a href="tel:+18882184549" class="footer-link">+1 (888)-218-4549</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td width="50%" style="vertical-align: top; padding-left: 20px;">
+                                        <div class="footer-section">
+                                            <div class="footer-section-title">Customer Success</div>
+                                            <div class="footer-section-text">For account and onboarding support</div>
+                                            <div class="footer-section-text">
+                                                ✉ <a href="mailto:success@wellbytes.ca" class="footer-link">success@wellbytes.ca</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <div class="footer-disclaimer">
+                                This is an automated email from Wellbytes. For assistance, please contact our support team.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
