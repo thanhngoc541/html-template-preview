@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clean and professional invoice template with itemized billing, tax calculations, and company branding.">
+    <meta name="keywords" content="Invoice, Business, Print-Ready, Billing">
+    <meta name="icon" content="🧾">
+    <title>Invoice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            padding: 40px;
+            background: #fff;
+        }
+
+        .invoice-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .company-info h1 {
+            color: #3498db;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .company-info p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .invoice-info {
+            text-align: right;
+        }
+
+        .invoice-info h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .invoice-info p {
+            font-size: 14px;
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .billing-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .billing-info {
+            flex: 1;
+        }
+
+        .billing-info h3 {
+            color: #3498db;
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .billing-info p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .items-table thead {
+            background: #3498db;
+            color: white;
+        }
+
+        .items-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .items-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 14px;
+        }
+
+        .items-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .totals {
+            margin-left: auto;
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        .totals-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .totals-row.subtotal {
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .totals-row.total {
+            border-top: 2px solid #333;
+            margin-top: 10px;
+            padding-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e0e0e0;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 12px;
+            color: #999;
+            margin: 5px 0;
+        }
+
+        .notes {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+
+        .notes h3 {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .notes p {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="company-info">
+                <h1>Your Company</h1>
+                <p>
+                    123 Business Street<br>
+                    New York, NY 10001<br>
+                    Phone: (555) 123-4567<br>
+                    Email: info@yourcompany.com
+                </p>
+            </div>
+            <div class="invoice-info">
+                <h2>INVOICE</h2>
+                <p><strong>Invoice #:</strong> INV-2026-001</p>
+                <p><strong>Date:</strong> February 11, 2026</p>
+                <p><strong>Due Date:</strong> March 11, 2026</p>
+            </div>
+        </div>
+
+        <!-- Billing Information -->
+        <div class="billing-section">
+            <div class="billing-info">
+                <h3>Bill To:</h3>
+                <p>
+                    <strong>Client Name</strong><br>
+                    456 Client Avenue<br>
+                    Los Angeles, CA 90001<br>
+                    client@email.com
+                </p>
+            </div>
+            <div class="billing-info">
+                <h3>Ship To:</h3>
+                <p>
+                    <strong>Client Name</strong><br>
+                    456 Client Avenue<br>
+                    Los Angeles, CA 90001<br>
+                    client@email.com
+                </p>
+            </div>
+        </div>
+
+        <!-- Items Table -->
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th class="text-right">Quantity</th>
+                    <th class="text-right">Unit Price</th>
+                    <th class="text-right">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Website Design & Development</td>
+                    <td class="text-right">1</td>
+                    <td class="text-right">$5,000.00</td>
+                    <td class="text-right">$5,000.00</td>
+                </tr>
+                <tr>
+                    <td>SEO Optimization</td>
+                    <td class="text-right">1</td>
+                    <td class="text-right">$1,500.00</td>
+                    <td class="text-right">$1,500.00</td>
+                </tr>
+                <tr>
+                    <td>Content Writing (10 pages)</td>
+                    <td class="text-right">10</td>
+                    <td class="text-right">$150.00</td>
+                    <td class="text-right">$1,500.00</td>
+                </tr>
+                <tr>
+                    <td>Logo Design</td>
+                    <td class="text-right">1</td>
+                    <td class="text-right">$800.00</td>
+                    <td class="text-right">$800.00</td>
+                </tr>
+                <tr>
+                    <td>Hosting & Domain (1 year)</td>
+                    <td class="text-right">1</td>
+                    <td class="text-right">$200.00</td>
+                    <td class="text-right">$200.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Totals -->
+        <div class="totals">
+            <div class="totals-row subtotal">
+                <span>Subtotal:</span>
+                <span>$9,000.00</span>
+            </div>
+            <div class="totals-row">
+                <span>Tax (10%):</span>
+                <span>$900.00</span>
+            </div>
+            <div class="totals-row">
+                <span>Discount:</span>
+                <span>-$500.00</span>
+            </div>
+            <div class="totals-row total">
+                <span>Total:</span>
+                <span>$9,400.00</span>
+            </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="notes">
+            <h3>Payment Terms & Notes</h3>
+            <p>
+                Payment is due within 30 days. Please include the invoice number with your payment.
+                Late payments may incur a 2% monthly fee. Thank you for your business!
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Thank you for your business!</strong></p>
+            <p>For questions about this invoice, please contact accounting@yourcompany.com</p>
+            <p>Company Registration #: 123456789 | Tax ID: 98-7654321</p>
+        </div>
+    </div>
+</body>
+</html>
