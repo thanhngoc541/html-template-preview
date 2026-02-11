@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Professional invoice reminder email template with payment options and contact information (inline CSS version).">
+    <meta name="keywords" content="Email, Invoice, Payment Reminder, Business, Inline">
+    <meta name="icon" content="💳">
+    <title>Invoice Payment Reminder (Inline)</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background-color: #f5f5f5; width: 100%; min-width: 320px;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #f5f5f5; border-collapse: collapse;">
+        <tr>
+            <td align="center" style="padding: 40px 20px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%; background: white; border-collapse: collapse;">
+                    <!-- Header -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #0066ff 0%, #00bba7 100%); padding: 60px 40px; text-align: left;">
+                            <div style="width: 50px; height: 50px; border-radius: 8px; font-weight: bold; background: linear-gradient(135deg, #0066ff 0%, #00bba7 100%); color: white; font-size: 20px; display: inline-block; text-align: center; line-height: 50px;">©</div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 50px 60px; color: #333333;">
+                            <!-- Subject -->
+                            <div style="font-size: 11px; background: linear-gradient(135deg, #0066ff 0%, #00bba7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; font-weight: 600;">SUBJECT</div>
+                            <div style="font-size: 24px; color: #1a1a1a; font-weight: 600; margin-bottom: 40px; line-height: 1.4;">Your Monthly Invoice – {{InvoiceMonth}} (Invoice {{InvoiceNumber}})</div>
+                            
+                            <!-- Greeting -->
+                            <p style="font-size: 16px; color: #1a1a1a; margin-bottom: 24px; font-weight: 400;">Dear {{CustomerName}},</p>
+                            
+                            <!-- Message -->
+                            <p style="font-size: 16px; color: #4a4a4a; line-height: 1.7; margin-bottom: 40px; font-weight: 400;">We hope this message finds you well. This is a friendly reminder that payment for your monthly invoice is now due.</p>
+                            
+                            <!-- Invoice Details Box -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background: linear-gradient(135deg, #f0f7ff 0%, #f0fcfc 100%); border: 2px solid #d0e7ff; border-radius: 16px; margin: 40px 0; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding: 35px 40px;">
+                                        <div style="font-size: 20px; color: #0066ff; font-weight: 600; margin-bottom: 30px;">Invoice Details</div>
+                                        
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse: collapse;">
+                                            <tr>
+                                                <td style="padding-bottom: 24px; width: 50%;">
+                                                    <div style="font-size: 14px; color: #0066ff; font-weight: 500; margin-bottom: 6px;">Invoice Number</div>
+                                                    <div style="font-size: 18px; color: #0066ff; font-weight: 700;">{{InvoiceNumber}}</div>
+                                                </td>
+                                                <td style="text-align: right; padding-bottom: 24px; width: 50%;">
+                                                    <div style="font-size: 14px; color: #0066ff; font-weight: 500; margin-bottom: 6px;">Amount Due</div>
+                                                    <div style="font-size: 28px; color: #0066ff; font-weight: 700;">{{AmountDue}}</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div style="font-size: 14px; color: #0066ff; font-weight: 500; margin-bottom: 6px;">Scheduled Payment Date</div>
+                                                    <div style="font-size: 18px; color: #0066ff; font-weight: 700;">{{ScheduledPaymentDate}}</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Payment Summary Table -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin: 40px 0; border-radius: 16px; overflow: hidden; border: 2px solid #e0e0e0; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); border-collapse: collapse;">
+                                <thead>
+                                    <tr>
+                                        <th style="background: #e8e8e8; padding: 18px 24px; text-align: left; font-size: 16px; font-weight: 600; color: #0066ff; border-right: 2px solid #d0d0d0;">Payment Summary</th>
+                                        <th style="background: #e8e8e8; padding: 18px 24px; text-align: left; font-size: 16px; font-weight: 600; color: #0066ff;">Value</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background-color: #fafafa;">
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: #fafafa; color: #333333; font-weight: 500; border-right: 2px solid #f0f0f0;"><strong>Previous Payment Due</strong></td>
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: #fafafa; color: #1a1a1a; font-weight: 600;">{{PreviousPaymentDue}}</td>
+                                    </tr>
+                                    <tr style="background-color: #fafafa;">
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: #fafafa; color: #333333; font-weight: 500; border-right: 2px solid #f0f0f0;"><strong>Current Payment Due</strong></td>
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: #fafafa; color: #1a1a1a; font-weight: 600;">{{CurrentPaymentDue}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: white; color: #333333; font-weight: 500; border-right: 2px solid #f0f0f0;">Monthly Contribution</td>
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: white; color: #1a1a1a; font-weight: 600;">{{MonthlyContribution}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: white; color: #333333; font-weight: 500; border-right: 2px solid #f0f0f0;">Transaction Fee <sup>2</sup></td>
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: white; color: #1a1a1a; font-weight: 600;">{{TransactionFee}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: white; color: #333333; font-weight: 500; border-right: 2px solid #f0f0f0;">Taxes and Fees Reserve</td>
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: white; color: #1a1a1a; font-weight: 600;">{{TaxAndFeeReserve}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: white; color: #333333; font-weight: 500; border-right: 2px solid #f0f0f0;">
+                                            Changes In Account Balance
+                                            <span style="font-size: 12px; color: #888888; font-weight: 400; display: block; margin-top: 4px;">(Removed and Add User)</span>
+                                        </td>
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: white; color: #1a1a1a; font-weight: 600;">{{ChangeInAccountBalance}}</td>
+                                    </tr>
+                                    <tr style="background-color: #fafafa;">
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: #fafafa; color: #333333; font-weight: 500; border-right: 2px solid #f0f0f0;">
+                                            <strong>Deposit</strong>
+                                            <span style="font-size: 12px; color: #888888; font-weight: 400; display: block; margin-top: 4px;">(The top-up amount and previous deposit) <sup>2</sup></span>
+                                        </td>
+                                        <td style="padding: 16px 24px; font-size: 15px; border-bottom: 1px solid #f0f0f0; background: #fafafa; color: #1a1a1a; font-weight: 600;">{{Deposit}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background: #0066ff; color: white; font-weight: 700; font-size: 17px; padding: 20px 24px; border-bottom: 1px solid rgba(255, 255, 255, 0.15); border-right: 1px solid rgba(255, 255, 255, 0.15);"><strong>Total Payment</strong></td>
+                                        <td style="background: #0066ff; color: white; font-weight: 700; font-size: 17px; padding: 20px 24px; border-bottom: 1px solid rgba(255, 255, 255, 0.15);">{{TotalPayment}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="background: #00bba7; color: white; font-weight: 700; font-size: 17px; padding: 20px 24px; border-right: 1px solid rgba(255, 255, 255, 0.15);"><strong>Total Payment With Transfer Fee</strong></td>
+                                        <td style="background: #00bba7; color: white; font-weight: 700; font-size: 17px; padding: 20px 24px;">{{TotalPaymentWithWireFee}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <!-- Payment Options -->
+                            <div style="font-size: 20px; color: #1a1a1a; font-weight: 600; margin: 50px 0 30px 0;">You have two ways to top up your account:</div>
+                            
+                            <!-- Option 1 -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border: 2px solid #e8e8e8; border-radius: 16px; margin-bottom: 20px; background: #ffffff; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding: 30px 35px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 18px; border-collapse: collapse;">
+                                            <tr>
+                                                <td style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #0066ff 0%, #00bba7 100%); color: white; font-size: 18px; font-weight: 700; text-align: center; vertical-align: middle; box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);">1</td>
+                                                <td style="font-size: 20px; color: #1a1a1a; font-weight: 600; padding-left: 14px;">Pay Manually:</td>
+                                            </tr>
+                                        </table>
+                                        <p style="font-size: 16px; color: #4a4a4a; line-height: 1.7; margin-bottom: 20px; font-weight: 400;">Click the button below to review your invoice and make a secure payment.</p>
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td>
+                                                    <a href="#" style="display: inline-block; padding: 16px 40px; background: linear-gradient(135deg, #0066ff 0%, #00bba7 100%); color: #ffffff; text-decoration: none; border-radius: 10px; font-weight: 600; font-size: 16px; text-align: center; box-shadow: 0 4px 12px rgba(0, 102, 255, 0.2);">Pay Invoice</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Option 2 -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border: 2px solid #e8e8e8; border-radius: 16px; margin-bottom: 20px; background: #ffffff; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding: 30px 35px;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 18px; border-collapse: collapse;">
+                                            <tr>
+                                                <td style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #00bba7 0%, #0066ff 100%); color: white; font-size: 18px; font-weight: 700; text-align: center; vertical-align: middle; box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);">2</td>
+                                                <td style="font-size: 20px; color: #1a1a1a; font-weight: 600; padding-left: 14px;">Automatic Payment (PAD):</td>
+                                            </tr>
+                                        </table>
+                                        <p style="font-size: 16px; color: #4a4a4a; line-height: 1.7; margin-bottom: 20px; font-weight: 400;">If you've set up a pre-authorized debit, the amount above will be automatically withdrawn from your account on the scheduled date.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Support Box -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background: #f9f9f9; border: 2px solid #efefef; border-radius: 16px; margin: 40px 0; border-collapse: collapse;">
+                                <tr>
+                                    <td style="padding: 30px 35px;">
+                                        <p style="font-size: 16px; color: #4a4a4a; margin-bottom: 20px; line-height: 1.7; font-weight: 400;">If you have any questions about the invoice, top-up process, or PAD, our team is here to assist:</p>
+                                        
+                                        <div style="margin: 10px 0; font-size: 16px;">
+                                            <span style="color: #1a1a1a; font-weight: 600;">Billing & Payment Support:</span>
+                                            <a href="mailto:billing@wellbytes.ca" style="color: #0066ff; text-decoration: none; font-weight: 500;">billing@wellbytes.ca</a> | 
+                                            <a href="tel:+18882184549" style="color: #0066ff; text-decoration: none; font-weight: 500;">+1 (888)-218-4549</a>
+                                        </div>
+                                        
+                                        <div style="margin: 10px 0; font-size: 16px;">
+                                            <span style="color: #1a1a1a; font-weight: 600;">Customer Success:</span>
+                                            <a href="mailto:success@wellbytes.ca" style="color: #0066ff; text-decoration: none; font-weight: 500;">success@wellbytes.ca</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Closing -->
+                            <div style="margin: 40px 0;">
+                                <p style="font-size: 16px; color: #4a4a4a; line-height: 1.7; margin-bottom: 20px; font-weight: 400;">Thank you for your prompt attention and for trusting Wellbytes to support your team's benefits.</p>
+                                
+                                <p style="font-size: 16px; color: #1a1a1a; font-weight: 400; line-height: 1.8;">
+                                    Best regards,<br>
+                                    <span style="color: #0066ff; font-weight: 600;">Wellbytes Operations Team</span>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #0066ff 0%, #00bba7 100%); padding: 50px 60px; color: white;">
+                            <div style="font-size: 24px; font-weight: 600; margin-bottom: 35px;">Need Assistance?</div>
+                            
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
+                                <tr>
+                                    <td width="50%" style="vertical-align: top; padding-right: 20px;">
+                                        <div style="margin-bottom: 28px;">
+                                            <div style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">Billing & Payment Support</div>
+                                            <div style="font-size: 15px; opacity: 0.9; margin: 8px 0; font-weight: 400;">For invoice and payment questions</div>
+                                            <div style="font-size: 15px; opacity: 0.9; margin: 8px 0; font-weight: 400;">
+                                                ✉ <a href="mailto:billing@wellbytes.ca" style="color: white; text-decoration: none;">billing@wellbytes.ca</a>
+                                            </div>
+                                            <div style="font-size: 15px; opacity: 0.9; margin: 8px 0; font-weight: 400;">
+                                                ☎ <a href="tel:+18882184549" style="color: white; text-decoration: none;">+1 (888)-218-4549</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td width="50%" style="vertical-align: top; padding-left: 20px;">
+                                        <div style="margin-bottom: 28px;">
+                                            <div style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">Customer Success</div>
+                                            <div style="font-size: 15px; opacity: 0.9; margin: 8px 0; font-weight: 400;">For account and onboarding support</div>
+                                            <div style="font-size: 15px; opacity: 0.9; margin: 8px 0; font-weight: 400;">
+                                                ✉ <a href="mailto:success@wellbytes.ca" style="color: white; text-decoration: none;">success@wellbytes.ca</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <div style="font-size: 12px; opacity: 0.8; margin-top: 30px; padding-top: 20px; border-top: 2px solid rgba(255, 255, 255, 0.2);">
+                                This is an automated email from Wellbytes. For assistance, please contact our support team.
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

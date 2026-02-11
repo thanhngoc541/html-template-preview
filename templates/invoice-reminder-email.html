@@ -494,27 +494,32 @@
                             <p class="message-text">We hope this message finds you well. This is a friendly reminder that payment for your monthly invoice is now due.</p>
                             
                             <!-- Invoice Details Box -->
-                            <div class="invoice-box">
-                                <div class="invoice-box-title">Invoice Details</div>
-                                
-                                <div class="invoice-row">
-                                    <div>
-                                        <div class="invoice-label">Invoice Number</div>
-                                        <div class="invoice-value">{{InvoiceNumber}}</div>
-                                    </div>
-                                    <div style="text-align: right;">
-                                        <div class="invoice-label">Amount Due</div>
-                                        <div class="invoice-value amount-value">{{AmountDue}}</div>
-                                    </div>
-                                </div>
-                                
-                                <div class="invoice-row" style="margin-bottom: 0;">
-                                    <div>
-                                        <div class="invoice-label">Scheduled Payment Date</div>
-                                        <div class="invoice-value">{{ScheduledPaymentDate}}</div>
-                                    </div>
-                                </div>
-                            </div>
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background: linear-gradient(135deg, #f0f7ff 0%, #f0fcfc 100%); border: 2px solid #d0e7ff; border-radius: 16px; margin: 40px 0;">
+                                <tr>
+                                    <td style="padding: 35px 40px;">
+                                        <div style="font-size: 20px; color: #0066ff; font-weight: 600; margin-bottom: 30px;">Invoice Details</div>
+                                        
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                                            <tr>
+                                                <td style="padding-bottom: 24px;">
+                                                    <div style="font-size: 14px; color: #0066ff; font-weight: 500; margin-bottom: 6px;">Invoice Number</div>
+                                                    <div style="font-size: 18px; color: #0066ff; font-weight: 700;">{{InvoiceNumber}}</div>
+                                                </td>
+                                                <td style="text-align: right; padding-bottom: 24px;">
+                                                    <div style="font-size: 14px; color: #0066ff; font-weight: 500; margin-bottom: 6px;">Amount Due</div>
+                                                    <div style="font-size: 28px; color: #0066ff; font-weight: 700;">{{AmountDue}}</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <div style="font-size: 14px; color: #0066ff; font-weight: 500; margin-bottom: 6px;">Scheduled Payment Date</div>
+                                                    <div style="font-size: 18px; color: #0066ff; font-weight: 700;">{{ScheduledPaymentDate}}</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
                             
                             <!-- Payment Summary Table -->
                             <div class="payment-summary">
